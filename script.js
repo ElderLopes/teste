@@ -2,14 +2,13 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     const images = carousel.querySelectorAll('img');
     let currentIndex = 0;
 
-    // Define a primeira imagem como ativa
     images[currentIndex].classList.add('active');
 
     setInterval(() => {
         images[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % images.length; // Avança para a próxima imagem
+        currentIndex = (currentIndex + 1) % images.length; 
         images[currentIndex].classList.add('active');
-    }, 3000); // Troca a imagem a cada 3 segundos
+    }, 3000);
 });
 
 const phoneNumber = "554788085196";
@@ -22,30 +21,25 @@ function handleWhatsAppClick() {
     window.open(`https://wa.me/${phoneNumber}`, "_blank");
 }
 
-// Mostrar/ocultar o botão de voltar ao topo
 const backToTopButton = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) { // Exibe o botão após rolar 300px
+    if (window.scrollY > 300) {
         backToTopButton.style.display = 'flex';
     } else {
         backToTopButton.style.display = 'none';
     }
 });
 
-// Inicialmente esconder o botão
 backToTopButton.style.display = 'none';
 
-//modal
 let slideIndex = 1;
 const slideIntervals = {};
 
 function openModal(modalId) {
     document.getElementById(modalId).style.display = "block";
-    slideIndex = 1; // Resetando o índice
-    showSlides(slideIndex, modalId);
-    console.log(modalId);
-    
+    slideIndex = 1; 
+    showSlides(slideIndex, modalId);    
     startSlideShow(modalId);
 }
 
@@ -57,11 +51,11 @@ function closeModal(modalId) {
 function startSlideShow(modalId) {
     slideIntervals[modalId] = setInterval(() => {
         plusSlides(1, modalId);
-    }, 3000); // Troca a imagem a cada 3 segundos
+    }, 3000); 
 }
 
 function stopSlideShow(modalId) {
-    clearInterval(slideIntervals[modalId]); // Para o carrossel específico da modal
+    clearInterval(slideIntervals[modalId]); 
 }
 
 function plusSlides(n, modalId) {
@@ -88,13 +82,13 @@ document.addEventListener('DOMContentLoaded', () => {
         galleryItems.forEach(item => {
             const rect = item.getBoundingClientRect();
             if (rect.top < window.innerHeight && rect.bottom > 0) {
-                item.classList.add('visible'); // Adiciona a classe 'visible' quando entra na visualização
+                item.classList.add('visible'); 
             }
         });
     };
 
     window.addEventListener('scroll', checkVisibility);
-    checkVisibility(); // Verifica a visibilidade ao carregar a página
+    checkVisibility(); 
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -115,15 +109,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function toggleNormalMenu() {
     const normalMenu = document.querySelector('.menu nav ul');
-    normalMenu.classList.toggle('active'); // Alterna a classe 'active'
+    normalMenu.classList.toggle('active'); 
 }
 
 window.onload = function() {
     setTimeout(function() {
         const bannerContent = document.querySelector('.banner-content');
-        bannerContent.style.opacity = 1; // Torna visível
-        bannerContent.style.transform = 'translateY(0)'; // Restaura a posição original
-    }, 2000); // Espera 3 segundos
+        bannerContent.style.opacity = 1; 
+        bannerContent.style.transform = 'translateY(0)';
+    }, 2000); 
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -133,13 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
         serviceCards.forEach(card => {
             const rect = card.getBoundingClientRect();
             if (rect.top < window.innerHeight && rect.bottom > 0) {
-                card.classList.add('visible'); // Adiciona a classe 'visible' quando entra na visualização
+                card.classList.add('visible'); 
             }
         });
     };
 
     window.addEventListener('scroll', checkVisibility);
-    checkVisibility(); // Verifica a visibilidade ao carregar a página
+    checkVisibility(); 
 });
 document.addEventListener('DOMContentLoaded', () => {
     const trainingsContainer = document.querySelector('.trainings-container');
@@ -147,10 +141,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkVisibility = () => {
         const rect = trainingsContainer.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) {
-            trainingsContainer.classList.add('visible'); // Adiciona a classe 'visible' quando entra na visualização
+            trainingsContainer.classList.add('visible'); 
         }
     };
 
     window.addEventListener('scroll', checkVisibility);
-    checkVisibility(); // Verifica a visibilidade ao carregar a página
+    checkVisibility(); 
 });
