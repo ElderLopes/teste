@@ -1,0 +1,1079 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    /* Preto com um leve tom azul */
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #111;
+}
+
+.menu {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu nav ul {
+    display: flex;
+    /* Flexbox para o menu normal */
+    list-style: none;
+    /* Remove os pontos */
+    padding: 0;
+    margin: 0;
+}
+
+.menu nav ul li {
+    margin-left: 20px;
+}
+
+.menu nav ul li a {
+    text-decoration: none;
+    color: red;
+    /* Cor do texto */
+    font-weight: bold;
+    /* Negrito */
+    transition: color 0.3s ease;
+    /* Transição ao passar o mouse */
+    font-size: 25px;
+    /* Tamanho da fonte */
+}
+
+.menu nav ul li a:hover {
+    color: gold;
+    /* Cor ao passar o mouse */
+}
+
+.menu-mobile {
+    display: none;
+}
+
+.logo-mobile {
+    display: none;
+}
+
+.container-social-networks-mobile {
+    display: none;
+}
+
+.logo {
+    color: gold;
+    font-weight: bold;
+}
+
+.logo-img {
+    width: 140px;
+}
+
+.container-social-networks {
+    display: flex;
+    gap: 20px;
+}
+
+.icon-wrapper {
+    color: #C0C0C0;
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-wrapper:hover {
+    color: gold;
+    transform: scale(1.2);
+}
+
+.hidden {
+    display: none;
+    /* Esconde o menu */
+}
+
+.container-social-networks {
+    display: flex !important;
+    gap: 20px !important;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.icon-wrapper {
+    color: #C0C0C0;
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-wrapper:hover {
+    color: gold;
+    transform: scale(1.2);
+}
+
+.banner {
+    position: relative;
+    height: 650px;
+    /* Ajuste a altura conforme necessário */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    border: 5px solid rgba(255, 215, 0, 0.7);
+    border-radius: 10px;
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    opacity: 0;
+    /* Inicialmente invisível */
+    transform: translateY(-20px);
+    /* Move um pouco para cima */
+    transition: opacity 1s ease, transform 1s ease;
+    /* Transição para opacidade e transformação */
+}
+
+.banner-content-mobile{
+    display: none;
+}
+
+.banner h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.banner p {
+    font-size: 25px;
+}
+
+
+.banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99%;
+    background-image: url('./assets/Jotta\ X\ BMW[1]\(1\)\(1\).png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+
+.banner-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    /* Opacidade das imagens de fundo */
+}
+
+.banner-image img.main-image {
+    position: relative;
+    z-index: 1;
+    /* Coloca a imagem principal acima das outras */
+    border: 5px solid gold;
+    /* Moldura dourada */
+    border-radius: 10px;
+}
+
+.banner-image img:nth-child(2) {
+    content: url('./assets/AudiSobre.png');
+    /* Substitua pelo caminho da sua imagem */
+    z-index: 0;
+    /* Para ficar atrás da imagem principal */
+}
+
+.banner-image img:nth-child(3) {
+    content: url('./assets/imagcelularporche.jpeg');
+    /* Substitua pelo caminho da sua imagem */
+    z-index: 0;
+    /* Para ficar atrás da imagem principal */
+}
+
+.banner-image img:nth-child(4) {
+    content: url('./assets/Lavacao.jpg');
+    /* Substitua pelo caminho da sua imagem */
+    z-index: 0;
+    /* Para ficar atrás da imagem principal */
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 50px 20px; */
+    text-align: center;
+    background-color: #111;
+    width: 96%;
+}
+
+.services h2 {
+    color: gold;
+    margin-bottom: 30px;
+    font-size: xxx-large;
+}
+
+.services-container {
+    /* fazer duas colunas com card */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.8s ease, opacity 0.5s ease; /* Transição para transformação e opacidade */
+    width: 450px;
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(150px); /* Move um pouco para baixo */
+}
+
+.service-card.visible {
+    opacity: 1; /* Torna visível */
+    transform: translateY(0); /* Restaura a posição original */
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    /* Animação ao passar o mouse */
+}
+
+.service-card img {
+    width: 100%;
+    height: auto;
+    /* Mantém a proporção da imagem */
+}
+
+.service-card h3 {
+    color: gold;
+    margin: 15px 0 10px;
+}
+
+.service-card p {
+    color: white;
+    padding: 0 15px 15px;
+}
+.whatsapp-button-services {
+    display: inline-block;
+    background-color: #DAA520; /* Cor de fundo do botão */
+    color: black; /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    text-decoration: none; /* Remove sublinhado */
+    margin: 15px 0; /* Espaçamento acima do botão */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
+}
+
+.whatsapp-button-services:hover {
+    background-color: #B8860B; /* Cor ao passar o mouse */
+    transform: scale(1.05); /* Efeito de escala ao passar o mouse */
+}
+
+.carousel {
+    display: flex;
+    /* Usar flexbox */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    position: relative;
+    width: 100%;
+    height: 200px;
+    /* Ajuste a altura conforme necessário */
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 100%;
+    height: 200px;
+    /* Altura fixa */
+    object-fit: cover;
+    /* Ajusta a imagem para cobrir o contêiner */
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel img.active {
+    opacity: 1;
+}
+
+.contact-container {
+    text-align: center;
+    margin: 40px 0;
+    color: white;
+}
+.contact-container h2 {
+    color: gold;
+    margin-bottom: 30px;
+    font-size: xxx-large;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    background-color: #8B0000;
+    /* Vermelho escuro */
+    color: gold;
+    /* Texto dourado */
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #A52A2A;
+    /* Vermelho mais claro ao passar o mouse */
+    color: white;
+    /* Texto branco ao passar o mouse */
+}
+
+.trainings {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #111;
+}
+
+.trainings h2 {
+    color: gold;
+    margin-bottom: 30px;
+    font-size: xxx-large;
+}
+
+.trainings-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateX(350px); /* Move para a direita para efeito de entrada */
+    transition: transform 0.8s ease, opacity 0.5s ease; /* Transição para transformação e opacidade */
+}
+
+.trainings-container.visible {
+    opacity: 1; /* Torna visível */
+    transform: translateX(0); /* Retorna à posição original */
+}
+
+.training-card {
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    width: 450px; /* Largura fixa para os cards */
+}
+
+.training-card:hover {
+    transform: scale(1.05); /* Animação ao passar o mouse */
+}
+
+.training-card img {
+    width: 100%;
+    height: 400px; /* Altura fixa */
+    object-fit: cover; /* Ajusta a imagem para cobrir o contêiner */
+}
+
+.training-card h3 {
+    color: gold;
+    margin: 15px 0 10px;
+}
+
+.training-card p {
+    color: white;
+    padding: 0 15px 15px;
+}
+
+.training-button {
+    display: inline-block;
+    background-color: #DAA520; /* Dourado */
+    color: black; /* Texto preto */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 15px 0;
+    transition: background-color 0.3s ease;
+}
+
+.training-button:hover {
+    background-color: #B8860B; /* Dourado mais escuro ao passar o mouse */
+}
+
+.testimonials {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #111;
+    /* Fundo escuro */
+}
+
+.testimonials h2 {
+    color: gold;
+    margin-bottom: 30px;
+    font-size: xxx-large;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Espaçamento entre os cards */
+}
+
+.testimonial-card {
+    background-color: #222;
+    /* Fundo dos cards */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    width: 300px;
+    /* Largura fixa para os cards */
+    position: relative;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+    /* Animação ao passar o mouse */
+}
+
+.testimonial-card img {
+    width: 100%;
+    height: 200px;
+    /* Ajuste a altura conforme necessário */
+    object-fit: cover;
+    /* Ajusta a imagem para cobrir o contêiner */
+}
+
+.view-more {
+    display: inline-block;
+    margin-top: 20px;
+    color: #DAA520;
+    /* Cor do link */
+    text-decoration: none;
+    /* Remove sublinhado */
+}
+
+.view-more:hover {
+    text-decoration: none;
+    /* Sublinha ao passar o mouse */
+}
+
+.location {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #111;
+    /* Fundo escuro */
+    color: white;
+    /* Texto branco */
+}
+
+.location h2 {
+    color: gold;
+    margin-bottom: 30px;
+    font-size: xxx-large;
+}
+
+.location p {
+    margin: 10px 0;
+    color: white;
+    /* Texto branco */
+}
+
+.map-container {
+    margin: 20px auto;
+    max-width: 800px;
+    /* Largura máxima do mapa */
+}
+
+.map {
+    width: 100%;
+    height: 450px;
+    /* Altura do mapa */
+    border: 0;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #DAA520;
+    /* Dourado */
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #DAA520;
+    /* Borda dourada */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.map-link:hover {
+    background-color: #DAA520;
+    /* Fundo dourado ao passar o mouse */
+    color: black;
+    /* Texto preto ao passar o mouse */
+}
+
+.footer-container {
+    background-color: #111;
+    /* Fundo escuro */
+    color: white;
+    /* Texto branco */
+    padding: 40px 20px;
+    /* Espaçamento interno */
+    text-align: center;
+    /* Centraliza o texto */
+    position: relative;
+    /* Permite posicionar elementos filhos */
+}
+
+.footer-content {
+    display: flex;
+    /* Usar flexbox para alinhamento */
+    flex-direction: column;
+    /* Coluna por padrão */
+    align-items: center;
+    /* Centraliza horizontalmente */
+}
+
+.containerSocialNetwork {
+    margin-top: 20px;
+    display: flex;
+    /* Usar flexbox para ícones */
+    justify-content: center;
+    /* Centraliza os ícones */
+}
+
+.icon-wrapper {
+    color: #DAA520;
+    /* Cor dos ícones */
+    font-size: 24px;
+    /* Tamanho dos ícones */
+    margin: 0 10px;
+    /* Espaçamento entre os ícones */
+    transition: color 0.3s ease;
+    /* Efeito de transição */
+}
+
+.icon-wrapper:hover {
+    color: white;
+    /* Cor ao passar o mouse */
+}
+
+.developer-info {
+    position: absolute;
+    /* Posiciona no canto direito */
+    right: 20px;
+    /* Margin do lado direito */
+    bottom: 20px;
+    /* Margin do fundo */
+    text-align: right;
+    /* Alinha à direita */
+}
+
+.developer-link {
+    color: #DAA520;
+    /* Dourado */
+    text-decoration: none;
+    /* Remove o sublinhado */
+}
+
+.developer-link:hover {
+    text-decoration: underline;
+    /* Sublinha ao passar o mouse */
+}
+
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 70px;
+    background-color: transparent; /* Sem fundo */
+    border: none;
+    border-radius: 50%;
+    width: 60px; /* Ajuste conforme necessário */
+    height: 60px; /* Ajuste conforme necessário */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+    animation: zoom 1s infinite; /* Animação de zoom */
+}
+
+.back-to-top img {
+    width: 100%; /* Ajusta a imagem ao botão */
+    height: auto; /* Mantém a proporção */
+    border-radius: 18px;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.back-to-top:hover {
+    background-color: #111; /* Cor ao passar o mouse */
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #111;
+    text-align: center;
+    
+}
+
+.gallery h2 {
+    color: gold;
+    margin-bottom: 30px;
+    font-size: xxx-large;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    justify-items: center;
+    /* Centraliza os itens dentro da grid */
+    width: 50%;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.8s ease, opacity 0.5s ease; /* Transição para transformação e opacidade */
+    /* Adiciona transição de opacidade */
+    opacity: 0;
+    /* Inicialmente oculto */
+    transform: translateX(-350px);
+    /* Move para a esquerda para efeito de entrada */
+}
+
+.gallery-item.visible {
+    opacity: 1;
+    /* Torna visível */
+    transform: translateX(0);
+    /* Retorna à posição original */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 50%;
+    /* Centraliza verticalmente */
+    left: 50%;
+    /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%);
+    /* Ajusta para que o centro do modal fique no centro da tela */
+    width: 50%;
+    height: 90%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    /* Adiciona algum espaço interno */
+    box-sizing: border-box;
+    /* Inclui padding e border no cálculo da largura e altura */
+}
+
+.modal-content {
+    display: flex;
+    /* Usar flexbox para centralizar */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    height: 100%;
+    /* Ocupa toda a altura do modal */
+}
+
+.slide {
+    display: none;
+    /* Esconde todas as imagens inicialmente */
+    opacity: 0;
+    /* Opacidade inicial */
+    transition: opacity 2s ease-in-out;
+    /* Transição suave de opacidade */
+    text-align: center;
+    /* Centraliza o conteúdo dentro do slide */
+}
+
+.slide.active {
+    display: block;
+    /* Exibe a imagem ativa */
+    opacity: 1;
+    /* Torna a imagem ativa visível */
+}
+
+.slide img {
+    max-width: 50%;
+    /* Faz a imagem ocupar no máximo 100% do espaço do slide */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #f1f1f1;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.menu-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    /* Exibe o ícone no mobile */
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.menu-mobile ul {
+    list-style: none;
+    /* Remove os pontos dos links no menu mobile */
+    display: none;
+    /* Ocultar menu por padrão */
+    flex-direction: column;
+    /* Muda para coluna */
+    align-items: center;
+    /* Centraliza os itens horizontalmente */
+    position: absolute;
+    background: #111;
+    /* Cor de fundo do menu */
+    top: 110px;
+    /* Ajuste conforme necessário */
+    right: 0;
+    width: 100%;
+}
+
+.menu-mobile nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.menu-mobile ul.active {
+    display: none;
+    /* Exibe o menu quando ativo */
+    border-top: #8B0000 4px solid;
+    border-color: #8B0000;
+    align-items: center
+}
+
+.menu-mobile ul li {
+    margin: 10px 0;
+    /* Espaçamento vertical entre os itens */
+}
+
+.menu-mobile ul li a {
+    text-decoration: none;
+    color: red;
+    /* Cor do texto */
+    font-weight: bold;
+    /* Negrito */
+    transition: color 0.3s ease;
+    /* Transição ao passar o mouse */
+    font-size: 25px;
+    /* Tamanho da fonte */
+}
+
+.menu-mobile ul li a:hover {
+    color: gold;
+    /* Cor ao passar o mouse */
+}
+
+
+@media (max-width: 1440px) {
+    .header {
+        display: none;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Exibe 2 colunas */
+        width: 96%;
+    }
+
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Exibe 2 colunas */
+    }
+
+    .modal {
+        height: 50%
+    }
+
+    ;
+
+    .gallery-item {
+        margin: 20px 0;
+        /* Adiciona espaço entre os itens */
+    }
+
+    .service-card {
+        margin: 20px 0;
+        /* Adiciona espaço entre os cards */
+    }
+}
+
+@media (max-width: 1030px) {
+    .services-container {
+        grid-template-columns: repeat(1, 1fr);
+        /* Exibe 1 coluna */
+    }
+
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+    }
+
+    .modal {
+        height: 90%
+    }
+
+    .slide img {
+        max-width: 95%;
+        /* Faz a imagem ocupar no máximo 100% do espaço do slide */
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(1, 1fr);
+        /* Exibe 1 coluna */
+        width: 50%;
+    }
+
+    .banner-content {
+        margin-bottom: 350px;
+    }
+}
+
+@media (max-width: 800px) {
+    .service-card {
+        width: 300px;
+    }
+
+    .modal {
+        height: auto;
+        width: 80%;
+    }
+}
+
+@media (max-width: 770px) {
+    .banner {
+        height: 260px;
+        /* Ajuste a altura para auto */
+        padding: 20px;
+        /* Adicione algum padding para acomodar o conteúdo */
+        width: 90% !important;
+    }
+
+    .banner-image {
+        height: 300px;
+        /* Defina uma altura adequada para telas menores */
+        background-size: cover;
+        /* Certifique-se que a imagem cubra todo o espaço */
+    }
+
+    .banner-content {
+        display: none;
+    }
+    .banner-content-mobile {
+        display: block;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner {
+        width: 88% !important;
+    }
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-container {
+        height: 250px;
+    }
+
+    .developer-info {
+        position: relative;
+        margin-top: 31px;
+        margin-left: 3rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .map-container iframe {
+        height: 200px;
+        /* Ajusta a altura do iframe para telas menores */
+        width: 100%;
+    }
+
+    .container-social-networks {
+        flex-direction: column;
+    }
+    .training-card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 1120px) {
+    .menu {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-mobile ul.active {
+        display: flex;
+        /* Exibe o menu quando ativo */
+        border-top: #8B0000 4px solid;
+        border-color: #8B0000;
+        align-items: center
+    }
+
+    .logo-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+    }
+
+    .container-social-networks-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .banner {
+        width: 97%;
+        transition: margin-top 0.3s ease;
+        /* Transição suave */
+    }
+
+    .banner.menu-active {
+        margin-top: 260px;
+        /* Margem superior quando o menu está ativo */
+    }
+
+    .menu-toggle {
+        display: block;
+        /* Exibe o ícone no mobile */
+    }
+}
+
+@media (max-width: 430px) {
+    .banner {
+        width: 70% !important;
+    }
+}
+@media (max-width: 330px) {
+    
+}
