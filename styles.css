@@ -305,6 +305,9 @@ header {
     padding: 50px 20px;
     text-align: center;
     background-color: #111;
+    max-width: 800px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza a seção */
+    overflow: hidden; /* Esconde overflow */
 }
 
 .trainings h2 {
